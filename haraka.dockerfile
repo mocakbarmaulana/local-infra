@@ -19,7 +19,7 @@ relay\n\
 queue/smtp_forward" > config/plugins
 
 # Buat file autentikasi CRAM-MD5 dengan user mailu:mailu
-RUN echo "[core]\nmethods=CRAM-MD5\n\n[users]\nmailu=mailu" > config/auth_flat_file.ini
+RUN echo "[core]\nmethods=PLAIN,LOGIN,CRAM-MD5\n\n[users]\nmailu=mailu" > config/auth_flat_file.ini
 
 # Tambahkan domain yang valid agar tidak error "No valid MX for your FROM address"
 RUN echo "*" > config/host_list
